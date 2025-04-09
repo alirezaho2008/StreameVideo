@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">استریم ویدیو</string>
+    <string name="play_button">پخش</string>
+    <string name="pause_button">توقف</string>
+    <string name="next_button">بعدی</string>
+    <string name="previous_button">قبلی</string>
+    <string name="like_button">پسندیدن</string>
+    <string name="dislike_button">نپسندیدن</string>
+    <string name="favorites_title">علاقه‌مندی‌ها</string>
+    <string name="user_switch_title">تغییر کاربر</string>
+    <string name="User1">کاربر اول</string>
+    <string name="User2">کاربر دوم</string>
+</resources>

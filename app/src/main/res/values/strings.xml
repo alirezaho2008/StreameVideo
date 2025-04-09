@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">StreameVideo</string>
+    <string name="app_name">Video Streaming</string>
+    <string name="play_button">Play</string>
+    <string name="pause_button">Pause</string>
+    <string name="next_button">Next</string>
+    <string name="previous_button">Previous</string>
+    <string name="like_button">Like</string>
+    <string name="dislike_button">Dislike</string>
+    <string name="favorites_title">Favorites</string>
+    <string name="user_switch_title">Switch User</string>
+    <string name="User1">User 1</string>
+    <string name="User2">User 2</string>
 </resources>
