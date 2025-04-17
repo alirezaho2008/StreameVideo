@@ -1,25 +1,44 @@
 package ir.alirezahp.streamevideo.helper
 
+import android.annotation.SuppressLint
 import android.app.Application
+import android.content.Context
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatDelegate
+import dagger.hilt.android.HiltAndroidApp
 import java.util.Locale
 
+@HiltAndroidApp
 class G : Application() {
     override fun onCreate() {
         super.onCreate()
-        setPersianLocale()
+        changeLanguageToFarsi(this)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+        context = this
     }
 
-    private fun setPersianLocale() {
+    override fun attachBaseContext(base: Context) {
+        super.attachBaseContext(changeLanguageToFarsi(base))
+    }
 
-        //Set Default language to Persian
-        val locale = Locale("fa")
-        Locale.setDefault(locale)
-        val config = resources.configuration
-        config.setLocale(locale)
-        config.setLayoutDirection(locale)
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        changeLanguageToFarsi(this)
+    }
 
-        createConfigurationContext(config)
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+    companion object {
+        @SuppressLint("StaticFieldLeak")
+        var context: Context? = null
+
+        fun changeLanguageToFarsi(context: Context): Context {
+            val locale = Locale("fa")
+            Locale.setDefault(locale)
+
+            val config = Configuration(context.resources.configuration)
+            config.setLocale(locale)
+            config.setLayoutDirection(locale)
+
+            return context.createConfigurationContext(config)
+        }
     }
 }
